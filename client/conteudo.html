@@ -1,0 +1,11 @@
+<template name="conteudo">
+  {{#if logado}}
+    {{#if jaAssinou}}
+      {{> ja_assinou}}
+    {{else}}
+      {{> nao_assinou}}
+    {{/if}}
+  {{else}}
+    {{> nao_logado}}
+  {{/if}}
+</template>
