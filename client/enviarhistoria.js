@@ -1,5 +1,4 @@
 Template.enviarhistoria.helpers({
-  setupFacebook: () => Session.get('setupFacebook')===1,
   nome: ()=> Meteor.user().profile.name
 })
 
@@ -8,8 +7,17 @@ Template.enviarhistoria.events({
     ev.preventDefault();
     var local=$('#loc').val();
     var link=$('#link').val();
+    var pub=$('#pub').val();
     var texto=$('#texto').val();
-    Meteor.call('envioHistoria', Meteor.userId(), local, link, texto, function(err, res){
+    if (!local) {
+      alert('Informe o local onde aconteceu sua história')
+      return
+    }
+    if (!link) {
+      alert('Informe um link que conta sua história. Pode ser um vídeo ou uma reportagem')
+      return
+    }
+    Meteor.call('envioHistoria', Meteor.userId(), local, link, pub, texto, function(err, res){
       if (res)
         alert(res)
       else if (err)

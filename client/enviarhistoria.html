@@ -11,9 +11,19 @@
      </h1>
      <p>
        <form>
-         <label>Local da filmagem: <input id="loc" type="text" placeholder="Cidade, Endereço, link do google maps, coordenada de gps, etc..." /></label><label></label><br />
-         <label>Link de vídeo: <input id="link" type="text" placeholder="youtube/facebook/vimeo ou um link de reportagem..." /></label><label></label><br />
+         <label>Local da história: <br/>
+           <input id="loc" type="text" placeholder="Cidade, Endereço, link do google maps, coordenada de gps, etc..." /></label><label>
+
+        </label><br />
+         <label>Link a história: <br/>
+           <input id="link" type="text" placeholder="youtube/facebook/vimeo ou um link de reportagem..." />
+         </label><br />
          <textarea id="texto" rows=3 placeholder="conte-nos como o rompimento das barragens da Samarco afetou sua vida ou a vida de pessoas que você conhece"></textarea><br />
+
+         <label><input type="radio" name="pub" value="0" checked>Quero permanecer anônimo</label><br />
+         <label><input type="radio" name="pub" value="1">Quero divulgar meu nome e minha foto</label><br />
+         <label><input type="radio" name="pub" value="2">Quero divulgar meu nome, minha foto e perfil no facebook</label><br />
+
          <button id="enviarHistoriaValidando">Enviar minha história</button>
        </form>
      </p>

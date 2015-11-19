@@ -60,7 +60,7 @@ button {
   bottom: 0;
   left: 0;
   width: 600px;
-  height: 300px;
+  height: 380px;
   z-index: 1000;
   background-color: #BCAAA4;
   border-radius: 20px;
@@ -99,11 +99,7 @@ button {
   color: white;
 }
 
-label {
-  width: 30em
-}
-
-input {
+input[type=text] {
   width: 90%
 }
 
