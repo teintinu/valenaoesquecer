@@ -1,0 +1,25 @@
+<template name="needLogin">
+  {{#if setupFacebook}}
+    {{>loginButtons}}
+  {{/if}}
+  <h1>
+   <span>Identifique-se</span>
+  </h1>
+  <p>
+     <ul>
+       <li>
+       Precisamos que você se identifique
+       </li>
+       <li>
+       É a maneira que temos para diminuir a quantidade de histórias falsas
+       e mensagens fora dos objetivos deste espaço
+       </li>
+       <li>
+       Seu nome não será divulgado.
+       </li>
+     </ul>
+   <button id="loginFacebook">
+     Clique aqui para se identificar usando sua conta do Facebook
+   </button>
+ </p>
+</template>

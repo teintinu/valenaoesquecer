@@ -1,0 +1,23 @@
+<template name="enviarhistoria">
+  <div id="enviarhistoria">
+     {{#unless currentUser}}
+       {{> needLogin}}
+     {{/unless}}
+     {{#if currentUser}}
+     <h1>
+       <span>
+         Olá {{nome}},
+       </span>
+     </h1>
+     <p>
+       <form>
+         <label>Local da filmagem: <input id="loc" type="text" placeholder="Cidade, Endereço, link do google maps, coordenada de gps, etc..." /></label><label></label><br />
+         <label>Link de vídeo: <input id="link" type="text" placeholder="youtube/facebook/vimeo ou um link de reportagem..." /></label><label></label><br />
+         <textarea id="texto" rows=3 placeholder="conte-nos como o rompimento das barragens da Samarco afetou sua vida ou a vida de pessoas que você conhece"></textarea><br />
+         <button id="enviarHistoriaValidando">Enviar minha história</button>
+       </form>
+     </p>
+     {{/if}}
+  </div>
+</template>
+
