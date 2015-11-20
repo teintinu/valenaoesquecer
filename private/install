@@ -1,10 +1,14 @@
 
 // https://www.digitalocean.com/community/tutorials/how-to-deploy-a-meteor-js-application-on-ubuntu-14-04-with-nginx
 
-apt-get install nginx mongodb-server
+add-apt-repository ppa:chris-lea/node.js
+apt-get update
+
+apt-get install nginx mongodb-server nodejs
 
 ln -s `pwd`/nve.nginxsite /etc/nginx/sites-available/nve
 
 nginx -s reload
 
 echo "@daily root mkdir -p /var/backups/mongodb; mongodump --db vne --out /var/backups/mongodb/$(date +'%d')" > /etc/cron.d/mongodb-backup
+
