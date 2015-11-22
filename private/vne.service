@@ -1,4 +1,4 @@
-# upstart service file at /etc/init/todos.conf
+# upstart service file at /etc/init/vne.conf
 description "#valenaoesquecer Meteor.js (NodeJS) application"
 author "Jose Fernando Tolentino <josefernandotoletino@gmail.com>"
 
@@ -24,8 +24,8 @@ script
     export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript
 
     # set to home directory of the user Meteor will be running as
-    export PWD=/home/todos
-    export HOME=/home/todos
+    export PWD=/home/vne
+    export HOME=/home/vne
 
     # leave as 127.0.0.1 for security
     export BIND_IP=127.0.0.1
@@ -36,11 +36,13 @@ script
     # this allows Meteor to figure out correct IP address of visitors
     export HTTP_FORWARDED_COUNT=1
 
-    # MongoDB connection string using todos as database name
+    # MongoDB connection string using vne as database name
     export MONGO_URL=mongodb://localhost:27017/nve
 
     # The domain name as configured previously as server_name in nginx
     export ROOT_URL=http://www.valenaoesquecer.org
 
-    exec node /home/todos/bundle/main.js >> /home/todos/todos.log
+    # exec node /home/vne/bundle/main.js >> /home/vne/vne.log
+
+    meteor --production
 end script
