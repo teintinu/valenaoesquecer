@@ -1,4 +1,4 @@
-# upstart service file at /etc/init/vne.conf
+# upstart service file at /etc/init/josefernandotolentino.conf
 description "#valenaoesquecer Meteor.js (NodeJS) application"
 author "Jose Fernando Tolentino <josefernandotoletino@gmail.com>"
 
@@ -16,16 +16,16 @@ respawn limit 10 5
 # console log
 
 # drop root proviliges and switch to mymetorapp user
-setuid vne
-setgid vne
+setuid josefernandotolentino
+setgid josefernandotolentino
 
 script
     export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript
 
     # set to home directory of the user Meteor will be running as
-    export PWD=/home/vne
-    export HOME=/home/vne
+    export PWD=/home/josefernandotolentino/valenaoesquecer
+    export HOME=/home/josefernandotolentino/valenaoesquecer
 
     # leave as 127.0.0.1 for security
     export BIND_IP=127.0.0.1
@@ -36,13 +36,13 @@ script
     # this allows Meteor to figure out correct IP address of visitors
     export HTTP_FORWARDED_COUNT=1
 
-    # MongoDB connection string using vne as database name
+    # MongoDB connection string using josefernandotolentino as database name
     export MONGO_URL=mongodb://localhost:27017/nve
 
     # The domain name as configured previously as server_name in nginx
     export ROOT_URL=http://www.valenaoesquecer.org
 
-    # exec node /home/vne/bundle/main.js >> /home/vne/vne.log
+    # exec node /home/josefernandotolentino/bundle/main.js >> /home/josefernandotolentino/josefernandotolentino.log
 
     meteor --production
 end script
