@@ -52,6 +52,7 @@ button {
   cursor: pointer;
 }
 
+
 #enviarhistoria {
   position: absolute;
   margin: auto;
@@ -66,6 +67,7 @@ button {
   border-radius: 20px;
   font-size: 110%;
 }
+
 
 #enviarhistoria > h1 {
   font-size: 120%;
@@ -105,4 +107,24 @@ input[type=text] {
 
 textarea {
   width: 90%
+}
+
+
+
+@media (max-width: 500px) 
+{
+  #title span {
+    font-size: 45%;
+  }
+  #enviarhistoria {
+    width: 500px;
+    height: 580px;
+  }
+  #envie {
+    font-size: 80%;
+  }
+
+  #compartilhe {
+    font-size: 80%;
+  }
 }
